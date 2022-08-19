@@ -1,4 +1,4 @@
-import { ActionPanel, List, Action, showToast, Toast, Detail, Icon } from "@raycast/api";
+import { ActionPanel, List, Action, showToast, Toast, Detail, Icon, Color } from "@raycast/api";
 import { useState } from "react";
 import { useRetoolDocSearch } from "./utils";
 
@@ -39,7 +39,10 @@ export default function Command() {
               />
               <Action.Push
                 title="Show Details"
-                icon={Icon.AppWindow}
+                icon={{
+                  source: Icon.Window,
+                  tintColor: Color.Orange,
+                }}
                 target={
                   <Detail
                     navigationTitle={`Retool - ${result.title}`}
